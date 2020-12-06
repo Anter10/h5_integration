@@ -107,25 +107,114 @@ print("account info ",mt5.account_info())
 
 
 
-symbols = ["USDJPY", "USDCHF","EURUSD"]
+symbols = ["USDJPY", "USDCHF","EURUSD","GBPUSD","GER30Cash","HK50Cash"]
 
 
 def job():
     # 更新市场信息
     for symbol_name in symbols:
-        symbol_info_tick = mt5.symbol_info_tick(symbol_name)
+        symbol_info_tick = mt5.symbol_info(symbol_name)
         market = {}
-        market["own_server"] = account_server2
-        market["market_name"] = symbol_name
-        market["time"] = symbol_info_tick.time
-        market["bid"] = symbol_info_tick.bid
-        market["ask"] = symbol_info_tick.ask
-        market["last"] = symbol_info_tick.last
-        market["volume"] = symbol_info_tick.volume
-        market["time"] = symbol_info_tick.time
-        market["time_msc"] = symbol_info_tick.time_msc
-        market["flags"] = symbol_info_tick.flags
-        market["volume_real"] = symbol_info_tick.volume_real
+        print("symbol_info_tick ",symbol_info_tick);
+        market["time"]                        = symbol_info_tick.time
+        market["bid"]                         = symbol_info_tick.bid
+        market["ask"]                         = symbol_info_tick.ask
+        market["last"]                        = symbol_info_tick.last
+        market["volume"]                      = symbol_info_tick.volume
+        market["volume_real"]                 = symbol_info_tick.volume_real
+        market["custome"]                     = symbol_info_tick.volume_real
+        market["chart_mode"]                  = symbol_info_tick.chart_mode
+        market["select"]                      = symbol_info_tick.select
+        market["visible"]                     = symbol_info_tick.visible
+        market["session_deals"]               = symbol_info_tick.session_deals
+        market["session_sell_orders"]         = symbol_info_tick.session_sell_orders
+        market["volumehigh"]                  = symbol_info_tick.volumehigh
+        market["volumelow"]                   = symbol_info_tick.volumelow
+        market["digits"]                      = symbol_info_tick.digits
+        market["spread"]                      = symbol_info_tick.spread
+        market["spread_float"]                = symbol_info_tick.spread_float
+        market["ticks_bookdepth"]             = symbol_info_tick.ticks_bookdepth
+        market["trade_calc_mode"]             = symbol_info_tick.trade_calc_mode
+        market["trade_mode"]                  = symbol_info_tick.trade_mode
+        market["start_time"]                  = symbol_info_tick.start_time
+        market["expiration_time"]             = symbol_info_tick.expiration_time
+        market["trade_stops_level"]           = symbol_info_tick.trade_stops_level
+        market["trade_freeze_level"]          = symbol_info_tick.trade_freeze_level
+        market["trade_exemode"]               = symbol_info_tick.trade_exemode
+        market["swap_mode"]                   = symbol_info_tick.swap_mode
+        market["swap_rollover3days"]          = symbol_info_tick.swap_rollover3days
+        market["margin_hedged_use_leg"]       = symbol_info_tick.margin_hedged_use_leg
+        market["expiration_mode"]             = symbol_info_tick.expiration_mode
+        market["filling_mode"]                = symbol_info_tick.filling_mode
+        market["order_mode"]                  = symbol_info_tick.order_mode
+        market["order_gtc_mode"]              = symbol_info_tick.order_gtc_mode
+        market["option_mode"]                 = symbol_info_tick.option_mode
+        market["option_right"]                = symbol_info_tick.option_right
+        market["bid"]                         = symbol_info_tick.bid
+        market["bidhigh"]                     = symbol_info_tick.bidhigh
+        market["bidlow"]                      = symbol_info_tick.bidlow
+        market["ask"]                         = symbol_info_tick.ask
+        market["askhigh"]                     = symbol_info_tick.askhigh
+        market["asklow"]                      = symbol_info_tick.asklow
+        market["last"]                        = symbol_info_tick.last
+        market["lasthigh"]                    = symbol_info_tick.lasthigh
+        market["lastlow"]                     = symbol_info_tick.lastlow
+        market["volume_real"]                 = symbol_info_tick.volume_real
+        market["volumehigh_real"]             = symbol_info_tick.volumehigh_real
+        market["option_strike"]               = symbol_info_tick.option_strike
+        market["point"]                       = symbol_info_tick.point
+        market["trade_tick_value"]            = symbol_info_tick.trade_tick_value
+        market["trade_tick_value_profit"]     = symbol_info_tick.trade_tick_value_profit
+        market["trade_tick_value_loss"]       = symbol_info_tick.trade_tick_value_loss
+        market["trade_tick_size"]             = symbol_info_tick.trade_tick_size
+        market["trade_contract_size"]         = symbol_info_tick.trade_contract_size
+        market["trade_accrued_interest"]      = symbol_info_tick.trade_accrued_interest
+        market["trade_face_value"]            = symbol_info_tick.trade_face_value
+        market["trade_liquidity_rate"]        = symbol_info_tick.trade_liquidity_rate
+        market["volume_min"]                  = symbol_info_tick.volume_min
+        market["volume_max"]                  = symbol_info_tick.volume_max
+        market["volume_step"]                 = symbol_info_tick.volume_step
+        market["volume_limit"]                = symbol_info_tick.volume_limit
+        market["swap_long"]                   = symbol_info_tick.swap_long
+        market["swap_short"]                  = symbol_info_tick.swap_short
+        market["margin_initial"]              = symbol_info_tick.margin_initial
+        market["margin_maintenance"]          = symbol_info_tick.margin_maintenance
+        market["session_volume"]              = symbol_info_tick.session_volume
+        market["session_turnover"]            = symbol_info_tick.session_turnover
+        market["session_interest"]            = symbol_info_tick.session_interest
+        market["session_buy_orders_volume"]   = symbol_info_tick.session_buy_orders_volume
+        market["session_sell_orders_volume"]  = symbol_info_tick.session_sell_orders_volume
+        market["session_open"]                = symbol_info_tick.session_open
+        market["session_close"]               = symbol_info_tick.session_close
+        market["session_aw"]                  = symbol_info_tick.session_aw
+        market["session_price_settlement"]    = symbol_info_tick.session_price_settlement
+        market["session_price_limit_min"]     = symbol_info_tick.session_price_limit_min
+        market["session_price_limit_max"]     = symbol_info_tick.session_price_limit_max
+        market["margin_hedged"]               = symbol_info_tick.margin_hedged
+        market["price_change"]                = symbol_info_tick.price_change
+        market["price_volatility"]            = symbol_info_tick.price_volatility
+        market["price_theoretical"]           = symbol_info_tick.price_theoretical
+        market["price_greeks_delta"]          = symbol_info_tick.price_greeks_delta
+        market["price_greeks_theta"]          = symbol_info_tick.price_greeks_theta
+        market["price_greeks_gamma"]          = symbol_info_tick.price_greeks_gamma
+        market["price_greeks_vega"]           = symbol_info_tick.price_greeks_vega
+        market["price_greeks_rho"]            = symbol_info_tick.price_greeks_rho
+        market["price_greeks_omega"]          = symbol_info_tick.price_greeks_omega
+        market["price_sensitivity"]           = symbol_info_tick.price_sensitivity
+        market["basis"]                       = symbol_info_tick.basis
+        market["category"]                    = symbol_info_tick.category
+        market["currency_base"]               = symbol_info_tick.currency_base
+        market["currency_profit"]             = symbol_info_tick.currency_profit
+        market["currency_margin"]             = symbol_info_tick.currency_margin
+        market["bank"]                        = symbol_info_tick.bank
+        market["description"]                 = symbol_info_tick.description
+        market["exchange"]                    = symbol_info_tick.exchange
+        market["formula"]                     = symbol_info_tick.formula
+        market["isin"]                        = symbol_info_tick.isin
+        market["name"]                        = symbol_info_tick.name
+        market["page"]                        = symbol_info_tick.page
+        market["path"]                        = symbol_info_tick.path
+        
         response = requests.post(server_url + "update_market/",json=market)
         json_response = response.json()
         print("json_response ",json_response )
@@ -217,9 +306,10 @@ def job():
 
         response = requests.post(server_url + "update_deal_order/",json=deal_data)
         json_response = response.json()
-
-# job()
+    
+ 
+job()
 # 定义BlockingScheduler
 sched = BlockingScheduler()
 sched.add_job(job, 'interval', seconds=1)
-sched.start()
+# sched.start()
